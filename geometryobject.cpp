@@ -3,7 +3,7 @@
 
 GeometryObject::GeometryObject(Vector3d initialPosition, Vector3d initialVelocity, Vector3d initialAcceleration)
 {
-    Vector3d mPosition{initialPosition};
+    mPosition = initialPosition;
     mVelocity = initialVelocity;
     mAcceleration = initialAcceleration;
 }
