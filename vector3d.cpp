@@ -53,8 +53,30 @@ bool Vector3d::operator==(Vector3d &rightHandVector)
     }
 }
 
+Vector3d Vector3d::operator+(Vector3d &rightHandVector)
+{
+    double xValue{mXValue + rightHandVector.get_x_value()};
+    double yValue{mYValue + rightHandVector.get_y_value()};
+    double zValue{mZValue + rightHandVector.get_z_value()};
+    return Vector3d(xValue, yValue, zValue);
+}
+
+Vector3d Vector3d::operator-(Vector3d &rightHandVector)
+{
+    double xValue{mXValue - rightHandVector.get_x_value()};
+    double yValue{mYValue - rightHandVector.get_y_value()};
+    double zValue{mZValue - rightHandVector.get_z_value()};
+    return Vector3d(xValue, yValue, zValue);
+}
+
 Vector3d Vector3d::operator*(double scaler)
 {
     Vector3d newVector{Vector3d(mXValue*scaler, mYValue*scaler, mZValue*scaler)};
+    return newVector;
+}
+
+Vector3d Vector3d::operator/(double divider)
+{
+    Vector3d newVector{Vector3d(mXValue/divider, mYValue/divider, mZValue/divider)};
     return newVector;
 }

@@ -16,7 +16,10 @@ public:
     double get_z_value();
 
     bool operator==(Vector3d &rightHandVector);
+    Vector3d operator+(Vector3d &rightHandVector);
+    Vector3d operator-(Vector3d &rightHandVector);
     Vector3d operator*(double scaler);
+    Vector3d operator/(double divider);
 
 private:
     double mXValue;

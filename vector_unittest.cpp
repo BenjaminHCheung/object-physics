@@ -15,7 +15,29 @@ TEST(GivenTooNonEqualVectors, WhenUsingIsEqualOperator_ReturnsFalse)
     EXPECT_FALSE(leftSide == rightSide);
 }
 
-TEST(GivenScalerValueOfTypeDouble, WhenUsingMultiplicationOperatore_IsEqual)
+TEST(GivenTwoDifferentVectors, WhenUsingAddingOperatorVectors_ReturnsVectorOfCorrectValuesInXYZPositions)
+{
+    Vector3d vectorOne{Vector3d(4.5, 19, -24.5)};
+    Vector3d vectorTwo{Vector3d(16, 19.4, 0)};
+    Vector3d calculatedVector{vectorOne+vectorTwo};
+    Vector3d expectedVector{Vector3d(20.5, 38.4, -24.5)};
+    EXPECT_EQ(expectedVector.get_x_value(),calculatedVector.get_x_value());
+    EXPECT_EQ(expectedVector.get_y_value(),calculatedVector.get_y_value());
+    EXPECT_EQ(expectedVector.get_z_value(),calculatedVector.get_z_value());
+}
+
+TEST(GivenTwoDifferentVectors, WhenUsingSubtractingOperatorVectors_ReturnsVectorOfCorrectValuesInXYZPositions)
+{
+    Vector3d vectorOne{Vector3d(55.5, -4, 0)};
+    Vector3d vectorTwo{Vector3d(50, -33.6, 13)};
+    Vector3d calculatedVector{vectorOne-vectorTwo};
+    Vector3d expectedVector{Vector3d(5.5, 29.6, -13)};
+    EXPECT_EQ(expectedVector.get_x_value(),calculatedVector.get_x_value());
+    EXPECT_EQ(expectedVector.get_y_value(),calculatedVector.get_y_value());
+    EXPECT_EQ(expectedVector.get_z_value(),calculatedVector.get_z_value());
+}
+
+TEST(GivenScalerValueOfTypeDouble, WhenUsingMultiplicationOperatore_ScalesEachValueInVectorCorrectly)
 {
     double scaler{9.8};
     Vector3d baseVector{Vector3d(1,2,2)};
@@ -26,3 +48,14 @@ TEST(GivenScalerValueOfTypeDouble, WhenUsingMultiplicationOperatore_IsEqual)
     EXPECT_EQ(expectedVector.get_z_value(),calculatedVector.get_z_value());
 }
 
+
+TEST(GivenDivisionValueOfTypeDouble, WhenUsingDivisionOperatore_DividesEachValueInVectorCorrectly)
+{
+    double divider{9.8};
+    Vector3d baseVector{Vector3d(9.8,19.6,9.8)};
+    Vector3d calculatedVector{baseVector/divider};
+    Vector3d expectedVector{Vector3d(1,2,1)};
+    EXPECT_EQ(expectedVector.get_x_value(),calculatedVector.get_x_value());
+    EXPECT_EQ(expectedVector.get_y_value(),calculatedVector.get_y_value());
+    EXPECT_EQ(expectedVector.get_z_value(),calculatedVector.get_z_value());
+}
