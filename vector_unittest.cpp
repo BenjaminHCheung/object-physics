@@ -37,7 +37,18 @@ TEST(GivenTwoDifferentVectors, WhenUsingSubtractingOperatorVectors_ReturnsVector
     EXPECT_EQ(expectedVector.get_z_value(),calculatedVector.get_z_value());
 }
 
-TEST(GivenScalerValueOfTypeDouble, WhenUsingMultiplicationOperatore_ScalesEachValueInVectorCorrectly)
+TEST(GivenScaler3dVector, WhenUsingMultiplicationOperatorAsDotProduct_ReturnsCorrectVectorValues)
+{
+    Vector3d scalerVector{Vector3d(-1,-2,3)};
+    Vector3d baseVector{(Vector3d(4,5,6))};
+    Vector3d calculatedVector(scalerVector*baseVector);
+    Vector3d expectedVector{Vector3d(-4,-10,18)};
+    EXPECT_EQ(expectedVector.get_x_value(),calculatedVector.get_x_value());
+    EXPECT_EQ(expectedVector.get_y_value(),calculatedVector.get_y_value());
+    EXPECT_EQ(expectedVector.get_z_value(),calculatedVector.get_z_value());
+}
+
+TEST(GivenScalerValueOfTypeDouble, WhenUsingMultiplicationOperator_ScalesEachValueInVectorCorrectly)
 {
     double scaler{9.8};
     Vector3d baseVector{Vector3d(1,2,2)};

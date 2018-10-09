@@ -18,6 +18,7 @@ public:
     bool operator==(Vector3d &rightHandVector);
     Vector3d operator+(Vector3d &rightHandVector);
     Vector3d operator-(Vector3d &rightHandVector);
+    Vector3d operator*(Vector3d &rightHandVector);
     Vector3d operator*(double scaler);
     Vector3d operator/(double divider);
 
