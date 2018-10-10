@@ -12,11 +12,19 @@ IF (NOT TARGET gtest)
 ENDIF()
 
 add_library(${PROJECT_NAME} STATIC
+    GeometryObject.h
+    GeometryObject.cpp
+    physics.h
+    physics.cpp
+    Vector3d.h
+    Vector3d.cpp
     	)
 
 set(TEST_NAME ${PROJECT_NAME}_UnitTest)
 
 add_executable(${TEST_NAME}
+    vector_unittest.cpp
+    objectphysics_unittest.cpp
         )
 
 target_link_libraries(${TEST_NAME} gtest gtest_main ${PROJECT_NAME})

@@ -14,6 +14,7 @@ public:
     double correct_overshoot(double position);
     void set_gravity(Vector3d newGravity);
     void update_object_acceleration(GeometryObject* sphereObject);
+    void update_object_kinematics(GeometryObject* sphereObject);
 
 private:
     double mCollisionPerimeter{4};

@@ -54,3 +54,10 @@ void physics::update_object_acceleration(GeometryObject* sphereObject)
     Vector3d objectAcceleration{mGravity};
     sphereObject->set_acceleration(objectAcceleration);
 }
+
+
+void physics::update_object_kinematics(GeometryObject* sphereObject)
+{
+    update_object_acceleration(sphereObject);
+    sphereObject->update_kinematics();
+}
