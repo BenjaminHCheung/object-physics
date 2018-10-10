@@ -1,14 +1,14 @@
 #include "gtest/gtest.h"
 #include "vector3d.h"
 
-TEST(GivenTooEqualVectors, WhenUsingIsEqualOperator_ReturnsTrue)
+TEST(GivenTwoEqualVectors, WhenUsingIsEqualOperator_ReturnsTrue)
 {
     Vector3d leftSide{Vector3d(1,2,3)};
     Vector3d rightSide{Vector3d(1,2,3)};
     EXPECT_TRUE(leftSide==rightSide);
 }
 
-TEST(GivenTooNonEqualVectors, WhenUsingIsEqualOperator_ReturnsFalse)
+TEST(GivenTwoNonEqualVectors, WhenUsingIsEqualOperator_ReturnsFalse)
 {
     Vector3d leftSide{Vector3d(13,22,3.6)};
     Vector3d rightSide{Vector3d(1.123,2.25,334)};

@@ -10,6 +10,10 @@ TEST(GivenAGeometryObject, WhenUpdateKinematicsIsCalled_ThePostionAndVelocityVec
     Vector3d expectedVelocity{Vector3d(10,10,9)};
     Vector3d expectedPosition{Vector3d(1,1,1)};
     sphere.update_kinematics();
-    EXPECT_EQ(expectedPosition, sphere.get_position());
-    EXPECT_EQ(expectedVelocity, sphere.get_velocity());
+    EXPECT_EQ(expectedVelocity.get_x_value(),sphere.get_velocity().get_x_value());
+    EXPECT_EQ(expectedVelocity.get_y_value(),sphere.get_velocity().get_y_value());
+    EXPECT_EQ(expectedVelocity.get_z_value(),sphere.get_velocity().get_z_value());
+    EXPECT_EQ(expectedPosition.get_x_value(),sphere.get_position().get_x_value());
+    EXPECT_EQ(expectedPosition.get_y_value(),sphere.get_position().get_y_value());
+    EXPECT_EQ(expectedPosition.get_z_value(),sphere.get_position().get_z_value());
 }

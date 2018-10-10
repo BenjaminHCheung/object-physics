@@ -23,7 +23,7 @@ private:
     Vector3d mPosition{Vector3d(0,0,0)};
     Vector3d mVelocity{Vector3d(0,0,0)};
     Vector3d mAcceleration{Vector3d(0,0,0)};
-    double mCr{.95};
+    double mCr{.8};
 
 };
 
